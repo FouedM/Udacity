@@ -126,7 +126,7 @@ class Blockchain {
         let currentTime = parseInt(
           new Date().getTime().toString().slice(0, -3)
         );
-        if (timeStamp - currentTime <= 300) {
+        if (currentTime - timeStamp < 5 * 60000) {
           const isBitMsgValid = bitcoinMessage.verify(
             message,
             address,

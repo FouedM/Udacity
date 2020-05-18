@@ -44,13 +44,12 @@ class Block {
       self.hash = SHA256(JSON.stringify(self)).toString();
 
       // Comparing if the hashes changed
-      if (auxHash !== self.hash) {
-        // Returning the Block is not valid
-        resolve(false);
-      }
 
+      const isSameHash = auxHash === self.hash;
+      self.hash = auxHash;
+      // Returning the Block is not valid
       // Returning the Block is valid
-      resolve(true);
+      resolve(isSameHash);
     });
   }
 
@@ -79,7 +78,7 @@ class Block {
         reject(" Genesis block");
       }
       resolve(star);
-    });
+    }).catch(error);
   }
 }
 
