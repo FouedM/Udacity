@@ -8,10 +8,10 @@ import "../coffeeaccesscontrol/ConsumerRole.sol";
 import "../coffeecore/Ownable.sol";
 
 // Define a contract 'Supplychain'
-contract SupplyChain is FarmerRole, DistributorRole, RetailerRole, ConsumerRole {
+contract SupplyChain is FarmerRole, DistributorRole, RetailerRole, ConsumerRole, Ownable {
 
   // Define 'owner'
-  address owner;
+  // address owner;
 
   // Define a variable called 'upc' for Universal Product Code (UPC)
   uint  upc;
@@ -70,10 +70,10 @@ contract SupplyChain is FarmerRole, DistributorRole, RetailerRole, ConsumerRole 
   event Purchased(uint upc);
 
   // Define a modifer that checks to see if msg.sender == owner of the contract
-  modifier onlyOwner() {
-    require(msg.sender == owner);
-    _;
-  }
+  // modifier onlyOwner() {
+  //   require(msg.sender == owner);
+  //   _;
+  // }
 
   // Define a modifer that verifies the Caller
   modifier verifyCaller (address _address) {
@@ -148,7 +148,7 @@ contract SupplyChain is FarmerRole, DistributorRole, RetailerRole, ConsumerRole 
   // and set 'sku' to 1
   // and set 'upc' to 1
   constructor() public payable {
-    owner = msg.sender;
+    transferOwnership(msg.sender);
     sku = 1;
     upc = 1;
   }
@@ -159,8 +159,8 @@ contract SupplyChain is FarmerRole, DistributorRole, RetailerRole, ConsumerRole 
 
   // Define a function 'kill' if required
   function kill() public {
-    if (msg.sender == owner) {
-      selfdestruct(_make_payable(owner));
+    if (msg.sender == owner()) {
+      selfdestruct(_make_payable(owner()));
     }
   }
 
