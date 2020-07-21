@@ -43,18 +43,18 @@
 
 Now you are ready to go
 
-1. Let's compile the code by running
+1/ Let's compile the code by running
 
-   truffle compile
+     truffle compile
 
-2. let's deploy the code to the rinkeby netowrk
+2/ let's deploy the code to the rinkeby netowrk
 
-   truffle migrate --reset --network rinkeby
+     truffle migrate --reset --network rinkeby
 
-3. Open your ganache workspace and start testing by running
+3/ Open your ganache workspace and start testing by running
 
-   truffle test
+     truffle test
 
-4. Let's give a life to our frontend app by running
+4/ Let's give a life to our frontend app by running
 
-   npm run dev
+     npm run dev
