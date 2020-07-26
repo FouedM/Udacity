@@ -5,7 +5,9 @@ The capstone will build upon the knowledge you have gained in the course in orde
 # Let's start :
 
 1/ npm install or yarn to install our dependencies.
+
 2/ truffle compile then truffle migrate --reset --network rinkeby
+
 3/ truffle test to run the tests
 
 # Contract Address
