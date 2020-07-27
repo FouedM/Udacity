@@ -4,19 +4,68 @@ The capstone will build upon the knowledge you have gained in the course in orde
 
 # Let's start :
 
-1/ npm install or yarn to install our dependencies.
-2/ truffle compile then truffle migrate --reset --network rinkeby
-3/ truffle test to run the tests
+1/ `npm install` or `yarn` to install our dependencies.
+2/ `truffle compile` then `truffle migrate --reset --network rinkeby`
+3/ `truffle test` to run the tests
 
 # Contract Address
 
-0x37D337a9b968ea945A794AFe262f831508945AD7
+Verifier : 0xFe09F46DaB4fC098bf211D956E480B8454466700
+SolnSquareVerifier : 0x37D337a9b968ea945A794AFe262f831508945AD7
 
 #OpenSea link (Store Azmour (Olive in the old greece) and symbol Zitoun (olive in arabic))
 https://rinkeby.opensea.io/storefront/azmour?search=%7B%22sortAscending%22%3Afalse%2C%22sortBy%22%3A%22LISTING_DATE%22%2C%22editor%22%3A%7B%22address%22%3A%220xd3d2398e1fe3728de74bc8dc7711043da98abf6a%22%7D%7D
 
 # ABI
 
+Verfier :
+[
+{
+"anonymous": false,
+"inputs": [
+{
+"indexed": false,
+"name": "s",
+"type": "string"
+}
+],
+"name": "Verified",
+"type": "event"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "a",
+"type": "uint256[2]"
+},
+{
+"name": "b",
+"type": "uint256[2][2]"
+},
+{
+"name": "c",
+"type": "uint256[2]"
+},
+{
+"name": "input",
+"type": "uint256[2]"
+}
+],
+"name": "verifyTx",
+"outputs": [
+{
+"name": "r",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+}
+],
+
+SolnSquareVerifier
 [
 {
 "constant": true,

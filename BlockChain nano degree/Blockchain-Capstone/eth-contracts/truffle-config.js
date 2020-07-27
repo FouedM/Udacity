@@ -19,7 +19,6 @@
  */
 
 const HDWalletProvider = require("truffle-hdwallet-provider");
-const infuraKey = "9e54aa50a53c454dbf9c8c270a6597c4";
 
 const fs = require("fs");
 let phrase = fs
@@ -28,6 +27,7 @@ let phrase = fs
 
 phrase = JSON.parse(phrase);
 const mnemonic = phrase.seed;
+const infuraKey = phrase.infuraKey;
 
 module.exports = {
   /**
